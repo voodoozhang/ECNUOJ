@@ -1453,7 +1453,9 @@ Sample Output 1
 3
  */
 static void func1_18(string string1,string string2){
+
     if (string1.length()!=string2.length()){
+
         cout<<1;
     } else{
         for (int i = 0; i < string2.size(); ++i) {
@@ -1464,18 +1466,20 @@ static void func1_18(string string1,string string2){
                 string1[i]=string2[i];
                 string2[i]=key;
             }
+
             int k=string2[i]-string1[i];
-            if (k!=0&&k!=24){
+            if (k!=0&&k!=32){
                 cout<<4;
                 break;
             } else{
-                if (k==24){
+                if (k==32){
                     cout<<3;
                     break;
                 }
+                if (i==string2.size()-1){cout<<2;};
             }
         }
-        cout<<2;
+
     }
 }
 int main() {
