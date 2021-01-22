@@ -44,12 +44,1382 @@ Sample Output 1
 
 shi er yi san qian si bai wu shi liu wan qi qian ling jiu
  */
-static void func(long i) {
+static void func(int a) {
+    string res;
+    int bil = a / 100000000;
+    a = a - bil * 100000000;
+    int mil = a / 10000;
+    int last = a - mil * 10000;
+    int q = bil / 10;
+    int w = bil % 10;
+    int p = mil / 1000;
+    int i = (mil % 1000) / 100;
+    int j = ((mil % 1000) % 100) / 10;
+    int y = ((mil % 1000) % 100) % 10;
+    int e = last / 1000;
+    int t = (last % 1000) / 100;
+    int f = ((last % 1000) % 100) / 10;
+    int g = ((last % 1000) % 100) % 10;
+
+    if (bil == 0 && mil == 0 && last == 0) {
+        res = res + "ling ";
+    } else if (bil == 0 && mil == 0 && last != 0) {
+        switch (e) {
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "er qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (t) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "er bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (e != 0 && f != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (f) {
+            case 0:
+                if ((e != 0 || t != 0) && (g != 0)) {
+                    res = res + "ling ";
+                }
+                break;
+            case 1:
+                if (e == 0 && t == 0) {
+                    res = res + "shi ";
+                } else {
+                    res = res + "yi shi ";
+                }
+
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (g) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+    } else if (bil == 0 && mil != 0 && last == 0) {
+        switch (p) {
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "er qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (i) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "er bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (e != 0 && f != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (j) {
+            case 0:
+                if ((e != 0 || t != 0) && (g != 0)) {
+                    res = res + "ling ";
+                }
+                break;
+            case 1:
+                if (e == 0 && t == 0) {
+                    res = res + "shi ";
+                } else {
+                    res = res + "yi shi ";
+                }
+
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (y) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+        res = res + "wan ";
+    } else if (bil == 0 && mil != 0 && last != 0) {
+        switch (p) {
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "er qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (i) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "er bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (p!= 0 && j != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (j) {
+            case 0:
+                if ((p != 0 || i != 0) && (y!= 0)) {
+                    res = res + "ling ";
+
+
+                }
+                break;
+            case 1:
+                if (p == 0 && i == 0) {
+                    res = res + "shi ";
+                } else {
+                    res = res + "yi shi ";
+                }
+
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (y) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+        res = res + "wan ";
+        switch (e) {
+            case 0:
+                res = res + "ling ";
+                break;
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "er qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (t) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "er bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (e != 0 && f != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (f) {
+            case 0:
+                if ((e != 0 || t != 0) && (g != 0)) {
+                    res = res + "ling ";
+                }
+                break;
+            case 1:
+                if (e==0&&t==0){
+                    res=res+"shi ";
+                } else{
+                    res = res + "yi shi ";
+                }
+
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (g) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+    } else if (bil != 0 && mil == 0 && last == 0) {
+        switch (q) {
+            case 1:
+                res = res + "shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+            default:;
+                break;
+        }
+        switch (w) {
+            case 1:
+                res=res+"yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+            default:;
+                break;
+        }
+        res=res+"yi ";
+    } else if (bil != 0 && mil == 0 && last != 0) {
+        switch (q) {
+            case 1:
+                res = res + "shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+            default:;
+                break;
+        }
+        switch (w) {
+            case 1:
+                res=res+"yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+            default:;
+                break;
+        }
+        res=res+"yi ";
+        switch (e) {
+            case 0:
+                res = res + "ling ";
+                break;
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "liang qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (t) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "liang bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (e != 0 && f != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (f) {
+            case 0:
+                if ((e != 0 || t != 0) && (g != 0)) {
+                    res = res + "ling ";
+                }
+                break;
+            case 1:
+                    res = res + "yi shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (g) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+    } else if (bil != 0 && mil != 0 && last == 0) {
+        switch (q) {
+            case 1:
+                res = res + "shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+            default:;
+                break;
+        }
+        switch (w) {
+            case 1:
+                res=res+"yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+            default:;
+                break;
+        }
+        res=res+"yi ";
+        switch (p) {
+            case 0:
+                res=res+"ling ";
+                break;
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "liang qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (i) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "liang bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (e != 0 && f != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (j) {
+            case 0:
+                if ((e != 0 || t != 0) && (g != 0)) {
+                    res = res + "ling ";
+                }
+                break;
+            case 1:
+                    res = res + "yi shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (y) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+        res = res + "wan ";
+
+    } else if (bil != 0 && mil != 0 && last != 0) {
+        switch (q) {
+            case 1:
+                res = res + "shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+            default:;
+                break;
+        }
+        switch (w) {
+            case 1:
+                res=res+"yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+            default:;
+                break;
+        }
+        res=res+"yi ";
+        switch (p) {
+            case 0:
+                res=res+"ling ";
+                break;
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "liang qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (i) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "liang bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (e != 0 && f != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (j) {
+            case 0:
+                if ((e != 0 || t != 0) && (g != 0)) {
+                    res = res + "ling ";
+                }
+                break;
+            case 1:
+                res = res + "yi shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (y) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+        res = res + "wan ";
+        switch (e) {
+            case 0:
+                res = res + "ling ";
+                break;
+            case 1:
+                res = res + "yi qian ";
+                break;
+            case 2:
+                res = res + "liang qian ";
+                break;
+            case 3:
+                res = res + "san qian ";
+                break;
+            case 4:
+                res = res + "wi qian ";
+                break;
+            case 5:
+                res = res + "wu qian ";
+                break;
+            case 6:
+                res = res + "liu qian ";
+                break;
+            case 7:
+                res = res + "qi qian ";
+                break;
+            case 8:
+                res = res + "ba qian ";
+                break;
+            case 9:
+                res = res + "jiu qian ";
+                break;
+            default:
+                break;
+        }
+        switch (t) {
+            case 1:
+                res = res + "yi bai ";
+                break;
+            case 2:
+                res = res + "liang bai ";
+                break;
+            case 3:
+                res = res + "san bai ";
+                break;
+            case 4:
+                res = res + "si bai ";
+                break;
+            case 5:
+                res = res + "wu bai ";
+                break;
+            case 6:
+                res = res + "liu bai ";
+                break;
+            case 7:
+                res = res + "qi bai ";
+                break;
+            case 8:
+                res = res + "ba bai ";
+                break;
+            case 9:
+                res = res + "jiu bai ";
+                break;
+            case 0:
+                if (e != 0 && f != 0) {
+                    res = res + "ling ";
+                }
+                break;
+
+        }
+        switch (f) {
+            case 0:
+                if ((e != 0 || t != 0) && (g != 0)) {
+                    res = res + "ling ";
+                }
+                break;
+            case 1:
+                res = res + "yi shi ";
+                break;
+            case 2:
+                res = res + "er shi ";
+                break;
+            case 3:
+                res = res + "san shi ";
+                break;
+            case 4:
+                res = res + "si shi ";
+                break;
+            case 5:
+                res = res + "wu shi ";
+                break;
+            case 6:
+                res = res + "liu shi ";
+                break;
+            case 7:
+                res = res + "qi shi ";
+                break;
+            case 8:
+                res = res + "ba shi ";
+                break;
+            case 9:
+                res = res + "jiu shi ";
+                break;
+
+        }
+        switch (g) {
+            case 1:
+                res = res + "yi ";
+                break;
+            case 2:
+                res = res + "er ";
+                break;
+            case 3:
+                res = res + "san ";
+                break;
+            case 4:
+                res = res + "si ";
+                break;
+            case 5:
+                res = res + "wu ";
+                break;
+            case 6:
+                res = res + "liu ";
+                break;
+            case 7:
+                res = res + "qi ";
+                break;
+            case 8:
+                res = res + "ba ";
+                break;
+            case 9:
+                res = res + "jiu ";
+                break;
+
+        }
+    }
+
+    cout << res;
 
 }
 
-int main() {
-    long i;
-    cin >> i;
-    func(i);
-}
+//int main() {
+//    int i;
+//    cin >> i;
+//    func(i);
+//}
